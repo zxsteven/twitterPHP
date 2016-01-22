@@ -10,7 +10,9 @@
 
 	$connection = new TwitterOAuth($apiKey, $apiSecret, $accessToken, $accessSecret);
 
-	$tweets = $connection->get('https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=2');
+	$tweets = $connection->get('https://api.twitter.com/1.1/statuses/update.json', array{
+		"status"=> "This is a test"
+	});
 
 	print_r($tweets);
 
